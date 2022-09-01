@@ -5,7 +5,7 @@ const Layout = ({children}) => {
   return (
     <>
       <Nav /> 
-      <div className="flex min-h-screen flex-col pt-14"> 
+      <div className="flex min-h-screen flex-col pt-20"> 
           <main className="px-8 max-w-7xl m-auto py-0 flex-1">
               {children}
           </main>
