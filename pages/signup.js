@@ -15,9 +15,7 @@ export default function SignUpScreen()  {
             const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
             // If sign in is succesful redirect to frontpage
             Router.push("/library");
-            console.log(user);
         } catch (error) {
-            console.log(error.message);
             setErrorMessage(true)
         }
     };
@@ -29,7 +27,7 @@ export default function SignUpScreen()  {
                 <p>Please sign up:</p>
                 <input className="mt-2 border border-zinc-400 p-2 rounded-lg" placeholder="* Email..." onChange={(event) => {setRegisterEmail(event.target.value)}} />
                 <input type="password" className="mt-2 border border-zinc-400 p-2 rounded-lg" placeholder="* Password..." onChange={(event) => {setRegisterPassword(event.target.value)}} />
-                <button className="transition mt-4 hover:brightness-110 bg-lime-500 text-white p-2 rounded-full" onClick={register}>Create user</button>    
+                <button className="btn-primary" onClick={register}>Create user</button>    
             </div>
             {errorMessage === true &&
                 <p className="w-64 mt-2 text-red-500">Sign up failed. Please try with another email or try again later.</p>

@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-primary {
+    @apply transition mt-4 hover:brightness-110 bg-lime-500 text-white py-2 px-4 rounded-full
+  } 
+}
+
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
