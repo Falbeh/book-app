@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth"
 import { auth } from '../firebase/clientApp'
+import Logout from './Logout'
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);   
@@ -68,16 +69,26 @@ const Nav = () => {
                                 <a onClick={() => setIsOpen(!isOpen)}>About</a>
                             </Link>
                         </li>
+                        {!user &&  
+                            <>
+                            <li className='mx-4 my-6'>
+                                <Link href='/login'>
+                                    <a className="border-black border py-2 px-4 rounded-full">Sign in</a>
+                                </Link>  
+                            </li>
+                            <li className='mx-4 my-6'>
+                                <Link href='/signup'>
+                                    <a className="border-black border bg-black text-white py-2 px-4 rounded-full">Join now</a>
+                                </Link>
+                            </li>
+                            </>
+                        }
+                        {user &&
                         <li className='mx-4 my-6'>
-                            <Link href='/login'>
-                                <a className="border-black border py-2 px-4 rounded-full">Sign in</a>
-                            </Link>  
+                            <Logout />
                         </li>
-                        <li className='mx-4 my-6'>
-                            <Link href='/signup'>
-                                <a className="border-black border bg-black text-white py-2 px-4 rounded-full">Join now</a>
-                            </Link>
-                        </li>
+                        }
+                        
                        
                     </ul>
                 </div>

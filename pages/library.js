@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../firebase/clientApp'
@@ -15,7 +15,7 @@ export default function Library() {
   },[])
 
   return (
-    <div>
+    <div className="text-white">
       <Head>
         <title>Book bank</title>
         <meta name="description" content="Save and rate the books you read" />
@@ -23,7 +23,7 @@ export default function Library() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigi />
       </Head>
-      <p className="text-4xl font-bold text-center pt-20">Welcome back {user.email}</p>
+      <p className="text-4xl font-bold text-center pt-20">Welcome back {user?.email}</p>
       <h1 className="text-xl font-bold pt-20">
         Your library
       </h1>
