@@ -5,7 +5,7 @@
 
 @layer base {
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
   }
   h2 {
     @apply text-xl;
@@ -14,7 +14,7 @@
 
 @layer components {
   .btn-primary {
-    @apply transition mt-4 hover:brightness-110 bg-lime-500 text-white py-2 px-4 rounded-full
+    @apply transition mt-4 hover:brightness-110 bg-[#2ce080] text-white py-2 px-4 rounded-full
   } 
   .page-contained {
     @apply px-8 max-w-7xl m-auto

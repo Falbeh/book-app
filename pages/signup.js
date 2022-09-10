@@ -21,8 +21,8 @@ export default function SignUpScreen()  {
     };
 
     return (
-        <div className="max-w-sm flex flex-col justify-center items-center m-auto mt-20">
-            <h1 className="text-4xl font-bold text-center pt-20">Book bank sign up</h1>
+        <div className="max-w-sm flex flex-col justify-center items-center m-auto">
+            <h1 className="text-4xl font-bold text-center">Book bank sign up</h1>
             <div className="flex flex-col pt-16 w-64">
                 <p>Please sign up:</p>
                 <input className="mt-2 border border-zinc-400 p-2 rounded-lg" placeholder="* Email..." onChange={(event) => {setRegisterEmail(event.target.value)}} />

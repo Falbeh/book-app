@@ -27,9 +27,9 @@ export default function Library() {
       </h1>
       <p className="pt-2 mb-4">Add books that you have read to your library and give them a rating</p>
       
-        <Link href="/books">
-            <a className="btn-primary">Add book +</a>
-        </Link>
+      <Link href="/books">
+          <a className="btn-primary">Add book +</a>
+      </Link>
     </div>
   )
 }

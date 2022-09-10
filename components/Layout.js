@@ -20,7 +20,7 @@ const Layout = ({children}) => {
       {user &&  <AppNav /> }
       <div className={`flex min-h-screen justify-between flex-col ${user ? "bg-app-dark" : ""}`}>
           {!user &&  <Nav /> }
-          <main>
+          <main className='overflow-hidden'>
               {children}
           </main>
       {!user &&  <Footer /> }
