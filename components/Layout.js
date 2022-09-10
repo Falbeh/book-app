@@ -17,10 +17,10 @@ const Layout = ({children}) => {
   return (
     <>
       {/* OBS */}
-      {!user &&  <Nav /> }
       {user &&  <AppNav /> }
-      <div className={`flex min-h-screen flex-col pt-20 ${user ? "bg-app-dark" : ""}`}>
-          <main className="px-8 max-w-7xl m-auto py-0 flex-1">
+      <div className={`flex min-h-screen justify-between flex-col ${user ? "bg-app-dark" : ""}`}>
+          {!user &&  <Nav /> }
+          <main>
               {children}
           </main>
       {!user &&  <Footer /> }

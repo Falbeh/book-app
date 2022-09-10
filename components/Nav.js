@@ -17,7 +17,7 @@ const Nav = () => {
    
     return (
         <>
-        <nav className='h-20 p-3 bg-white shadow-bottom-outer fixed top-0 w-full z-50'>
+        <nav className='h-20 p-3 bg-white shadow-bottom-outer sticky top-0 w-full z-50'>
             <div className="px-8 h-full max-w-7xl flex items-center m-auto justify-between">
                 <Link href='/'> 
                     <a className="h-8">

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <footer className="border-t border-zinc-300 py-10">
+    <footer className="border-t border-zinc-300 py-10 z-10 bg-white">
         <div className="flex items-center justify-center">
             Powered by Falbe
             <span className="ml-1">

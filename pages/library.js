@@ -20,8 +20,6 @@ export default function Library() {
         <title>Book bank</title>
         <meta name="description" content="Save and rate the books you read" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigi />
       </Head>
       <p className="text-4xl font-bold text-center pt-20">Welcome back {user?.email}</p>
       <h1 className="text-xl font-bold pt-20">

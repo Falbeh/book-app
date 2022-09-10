@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['Rubik', 'sans-serif', 'system-ui'],
+      'sans': ['Poppins', 'sans-serif', 'system-ui'],
     },
     extend: {
       boxShadow: {
@@ -16,6 +16,14 @@ module.exports = {
       colors: {
         'app-dark': "#1B1B1B",
         'app-dark-light': "#282828"
+      },
+      spacing: {
+        'screen-80': '80vh',
+				'screen-75': '75vh',
+				'screen-60': '60vh',
+				'screen-50': '50vh',
+				'screen-40': '40vh',
+				'screen-30': '30vh',
       }
     },
   },
