@@ -1,32 +1,46 @@
 import Nav from './Nav'
 import AppNav from './AppNav'
 import Footer from './Footer'
-import { useEffect, useState } from 'react'
-import { onAuthStateChanged } from "firebase/auth"
 import { auth } from '../firebase/clientApp'
+import { useRouter } from 'next/router'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const Layout = ({children}) => {
-  const [user, setUser] = useState({});
-    
-  useEffect(() => {
-      onAuthStateChanged(auth, (currentUser) => {
-          setUser(currentUser);
-      })
-  },[])
+  const [user, loading] = useAuthState(auth); 
+  const router = useRouter();
 
-  return (
-    <>
-      {/* OBS */}
-      {user &&  <AppNav /> }
-      <div className={`flex min-h-screen justify-between flex-col ${user ? "bg-app-dark" : ""}`}>
-          {!user &&  <Nav /> }
-          <main className='overflow-hidden'>
+  if (loading) {
+    return <div></div>
+  }
+
+  if (user) {
+    console.log(user)
+    return (
+      <>
+        
+        <div className={`flex min-h-screen justify-between flex-row ${user ? "bg-app-dark" : ""}`}>
+          <AppNav /> 
+          <main className='overflow-hidden w-full'>
               {children}
           </main>
-      {!user &&  <Footer /> }
-      </div>
-    </>
-  )
+        </div>
+      </>
+    )
+  }
+  else {
+    return (
+      <>
+        <div className={`flex min-h-screen justify-between flex-col ${user ? "bg-app-dark" : ""}`}>
+            <Nav />
+            <main className='overflow-hidden'>
+                {children}
+            </main>
+        <Footer />
+        </div>
+      </>
+    )
+  }
+  
 }
 
 export default Layout

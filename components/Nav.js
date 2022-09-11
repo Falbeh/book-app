@@ -73,12 +73,12 @@ const Nav = () => {
                             <>
                             <li className='mx-4 my-6'>
                                 <Link href='/login'>
-                                    <a className="border-black border py-2 px-4 rounded-full">Sign in</a>
+                                    <a>Sign in</a>
                                 </Link>  
                             </li>
                             <li className='mx-4 my-6'>
                                 <Link href='/signup'>
-                                    <a className="border-black border bg-black text-white py-2 px-4 rounded-full">Join now</a>
+                                    <a>Join now</a>
                                 </Link>
                             </li>
                             </>
@@ -94,7 +94,7 @@ const Nav = () => {
                 </div>
             </div>
         </nav>
-        <div onClick={() => setIsOpen(!isOpen)} className={`fixed w-full h-full bg-black ${isOpen ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
+        <div onClick={() => setIsOpen(!isOpen)} className={`z-20 fixed w-full h-full bg-black ${isOpen ? 'opacity-50 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}></div>
         </>
     )
 }
